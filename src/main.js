@@ -8,7 +8,7 @@ import router from './router'
 import i18n from './locale'
 import iview from 'iview'
 import '@/assets/less/variable.less'
-
+import store from './store'
 Vue.config.productionTip = false
 Vue.use(iview)
 Vue.use(VueI18n)
@@ -17,6 +17,7 @@ new Vue({
   el: '#app',
   router,
   i18n,
+  store,
   template: '<App/>',
   components: { App }
 })
