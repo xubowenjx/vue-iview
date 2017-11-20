@@ -31,7 +31,7 @@ module.exports = {
     /**
      * Source Maps
      */
-     
+
     // https://webpack.js.org/configuration/devtool/#development
     devtool: 'eval-source-map',
 
@@ -61,7 +61,7 @@ module.exports = {
      * Source Maps
      */
 
-    productionSourceMap: false,
+    productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
     

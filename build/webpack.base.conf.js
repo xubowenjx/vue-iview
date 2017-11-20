@@ -11,9 +11,7 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: ["./src/main.js"],
-    'vender-base': '@/vendors/vendor.base.js',
-    'vender-exten':'@/vendors/vendor.exten.js'
+    app: ['babel-polyfill','./src/main.js']
   },
   output: {
     path: config.build.assetsRoot,
@@ -22,9 +20,6 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
-  externals: {
-    
-},
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

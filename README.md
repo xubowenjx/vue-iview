@@ -1,4 +1,4 @@
-# vue-iview
+# iview-vue
 
 > A Vue.js project
 
