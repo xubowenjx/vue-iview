@@ -1,7 +1,7 @@
 import axios from 'axios'
-import env from '../config/env'
 import store from '@/store'
 import router from '@/router'
+let env = process.env.NODE_ENV
 const ajaxUrl = env === 'development'
   ? '/be4app'
   : env === 'production'

@@ -1,11 +1,17 @@
-import Vue from 'vue'
-import HelloWorld from '@/components/HelloWorld'
+import { destroyVM, createTest } from '../utils'
+import HelloWorld from '@/components/InputDemo.vue'
 
-describe('HelloWorld.vue', () => {
-  it('should render correct contents', () => {
-    const Constructor = Vue.extend(HelloWorld)
-    const vm = new Constructor().$mount()
-    expect(vm.$el.querySelector('.hello h1').textContent)
-    .to.equal('Welcome to Your Vue.js App')
+describe('InputDemo.vue', () => {
+  let vm
+  afterEach(() => {
+    destroyVM(vm)
+  })
+  it('测试获取默认元素内容', () => {
+    vm = createTest(HelloWorld, {}, true)
+    expect(vm.$el.querySelector('input.ivu-input').placeholder).to.equal('请输入名称')
+  })
+  it('测试属性渲染', () => {
+    vm = createTest(HelloWorld, { form: {name: 'xbw'} }, true)
+    expect(vm.$el.querySelector('input.ivu-input').value).to.equal('xbw')
   })
 })

@@ -10,13 +10,21 @@
 <script>
   export default {
     name: 'InputDemo',
-    data () {
-      return {
-        form: {
-          name: ''
-        },
-        rules: {
-          name: [{ required: true, message: '请填写姓名', trigger: 'blur' }]
+    props: {
+      form: {
+        type: Object,
+        default: function () {
+          return {
+            name: ''
+          }
+        }
+      },
+      rules: {
+        type: Object,
+        default: function () {
+          return {
+            name: [{ required: true, message: '请填写姓名', trigger: 'blur' }]
+          }
         }
       }
     },
