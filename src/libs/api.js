@@ -3,9 +3,9 @@ import store from '@/store'
 import router from '@/router'
 let env = process.env.NODE_ENV
 const ajaxUrl = env === 'development'
-  ? '/be4app'
+  ? '/'
   : env === 'production'
-  ? 'https://www.url.com'
+  ? './'
   : 'https://debug.url.com'
 
 // http request 拦截器
